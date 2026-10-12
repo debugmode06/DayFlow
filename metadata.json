@@ -1,0 +1,6 @@
+{
+  "name": "Dayflow - Make Work Flow",
+  "description": "A connected workspace bringing projects, tasks, teams, and intelligent agent workflows into one unified flow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
