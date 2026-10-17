@@ -52,23 +52,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Main Hero Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Big Bold Headline & Subtext */}
-          <div className="lg:col-span-7 space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-[-0.03em] text-[#101214] leading-[1.08] text-balance">
+          {/* Left Column: Headline & Subtext */}
+          <div className="lg:col-span-7 space-y-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-[-0.03em] text-[#101214] leading-[1.12] text-balance">
               Turn plans into agent-ready tasks
             </h1>
             
-            <p className="text-lg md:text-xl text-[#344563] leading-relaxed max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-[#344563] leading-relaxed max-w-xl font-normal">
               Then build. Orchestrate work across your team and agents, with complete context.
             </p>
           </div>
 
-          {/* Right Column: Hero Signup Panel from Screenshot 1 */}
+          {/* Right Column: Hero Signup Panel */}
           <div className="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto">
             <div className="p-2">
               <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
-                      <label htmlFor="hero-email" className="block text-xs font-semibold text-slate-800 mb-2">
+                      <label htmlFor="hero-email" className="block text-xs font-semibold text-slate-800 mb-1.5">
                         Work email
                       </label>
                       <input
@@ -80,13 +80,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                           if (error) setError('');
                         }}
                         placeholder="you@company.com"
-                        className="w-full px-5 py-3.5 rounded-full border border-slate-300/80 bg-white/70 backdrop-blur-xs text-slate-900 placeholder:text-slate-400 text-base focus:border-[#0052cc] focus:bg-white focus:ring-3 focus:ring-[#0052cc]/15 outline-none transition-all shadow-xs"
+                        className="w-full px-4.5 py-3 rounded-full border border-slate-300/80 bg-white/70 backdrop-blur-xs text-slate-900 placeholder:text-slate-400 text-[14.5px] focus:border-[#0052cc] focus:bg-white focus:ring-3 focus:ring-[#0052cc]/15 outline-none transition-all shadow-xs"
                         autoComplete="email"
                       />
                       {error && (
                         <p className="mt-1.5 text-xs text-rose-600 font-medium">{error}</p>
                       )}
-                      <span className="block text-xs text-slate-600 mt-2">
+                      <span className="block text-xs text-slate-500 mt-1.5">
                         Use a work email to find teammates and get access to {brand.aiName}
                       </span>
                     </div>
@@ -94,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     {/* Primary CTA Button: 'Sign up' */}
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-full bg-[#0052cc] hover:bg-[#0065ff] text-white font-bold text-base transition-all shadow-sm hover:shadow active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2"
+                      className="w-full py-3 px-6 rounded-full bg-[#0052cc] hover:bg-[#0065ff] text-white font-bold text-[15px] transition-all shadow-sm hover:shadow active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2"
                     >
                       {isSuccess ? (
                         <>

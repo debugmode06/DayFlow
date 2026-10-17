@@ -2,10 +2,10 @@ import React from 'react';
 import { dayflowBrand, BrandConfig } from './config/brandConfig';
 import { SiteHeader } from './components/SiteHeader';
 import { HeroSection } from './components/HeroSection';
-import { DayflowCapabilitiesStrip } from './components/DayflowCapabilitiesStrip';
+import { DayflowFeatureGrid } from './components/DayflowFeatureGrid';
+import { DayflowCollectionShowcase } from './components/DayflowCollectionShowcase';
 import { DarkFeatureSection } from './components/DarkFeatureSection';
 import { ProductShowcase } from './components/ProductShowcase';
-import { DayflowFeatureGrid } from './components/DayflowFeatureGrid';
 import { DayflowFounderStory } from './components/DayflowFounderStory';
 import { FinalCTASection } from './components/FinalCTASection';
 import { SiteFooter } from './components/SiteFooter';
@@ -21,40 +21,40 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-[#161b22] flex flex-col font-sans">
       <main className="flex-1 flex flex-col">
-        {/* Header & Navigation Bar */}
+        {/* 1. Header & Navigation Bar with Enterprise Product Mega Menu */}
         <SiteHeader
           brand={brand}
           onNavigateToAuth={handleNoNav}
         />
 
-        {/* Hero Section with Inline Form Handling */}
+        {/* 2. Hero Section with Inline Form Handling */}
         <HeroSection brand={brand} />
 
-        {/* Dayflow Product Capabilities Strip */}
-        <DayflowCapabilitiesStrip />
+        {/* 3. Dayflow Interactive Product Capability Grid */}
+        <DayflowFeatureGrid />
 
-        {/* Dark AI Era Feature Showcase */}
+        {/* 4. Dayflow Product Collection Showcase (Teamwork, Strategy, Service, Software, Product) */}
+        <DayflowCollectionShowcase />
+
+        {/* 5. Dark AI Era Feature Showcase */}
         <DarkFeatureSection brand={brand} />
 
-        {/* Product Demonstration / Interactive Kanban Board */}
+        {/* 6. Product Demonstration / Interactive Kanban Board */}
         <ProductShowcase
           brand={brand}
           onGetStarted={handleNoNav}
         />
 
-        {/* Dayflow Interactive Product Capability Grid */}
-        <DayflowFeatureGrid />
-
-        {/* Dayflow Founder Story Section (Mohan S. Story Card) */}
+        {/* 7. Dayflow Founder Story Section (Mohan S. Story Card) */}
         <DayflowFounderStory />
 
-        {/* Final Call to Action Section */}
+        {/* 8. Final Call to Action Section */}
         <FinalCTASection
           brand={brand}
           onGetStarted={handleNoNav}
         />
 
-        {/* Site Footer */}
+        {/* 9. Site Footer */}
         <div id="footer">
           <SiteFooter
             brand={brand}

@@ -23,12 +23,12 @@ export const DayflowFounderStory: React.FC<DayflowFounderStoryProps> = ({ onExpl
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-10 max-w-2xl">
           <div className="text-xs font-bold uppercase tracking-[0.1em] text-[#2563FF] mb-2 flex items-center gap-1.5">
             <span className="w-2 h-0.5 bg-[#2563FF] rounded-full inline-block" />
             <span>THE STORY BEHIND DAYFLOW</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold text-[#0F172A] tracking-tight leading-[1.18]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold text-[#0F172A] tracking-tight leading-[1.18]">
             Built from a simple belief: work should flow.
           </h2>
         </div>
@@ -86,12 +86,12 @@ export const DayflowFounderStory: React.FC<DayflowFounderStoryProps> = ({ onExpl
               </div>
 
               {/* Editorial Quote Mark */}
-              <div className="text-5xl lg:text-6xl font-serif text-white font-black leading-none opacity-90 select-none my-3">
+              <div className="text-4xl lg:text-5xl font-serif text-white font-black leading-none opacity-90 select-none my-2.5">
                 “
               </div>
 
               {/* Main Founder Story Copy */}
-              <p className="text-base sm:text-lg lg:text-[1.25rem] font-medium text-white leading-relaxed tracking-tight max-w-2xl">
+              <p className="text-base sm:text-[17px] lg:text-[1.125rem] font-medium text-white leading-relaxed tracking-tight max-w-2xl">
                 "Dayflow is my vision for bringing projects, tasks, teams, and everyday workflows into one connected workspace. As a developer and product builder, I want to make managing work feel clearer, simpler, and more connected — so people can spend less time coordinating and more time creating."
               </p>
 
@@ -112,7 +112,7 @@ export const DayflowFounderStory: React.FC<DayflowFounderStoryProps> = ({ onExpl
                 <button
                   type="button"
                   onClick={handleCtaClick}
-                  className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-white hover:text-cyan-200 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2 text-sm sm:text-[15px] font-bold text-white hover:text-cyan-200 transition-colors group cursor-pointer"
                 >
                   <span>Explore the Dayflow vision</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />

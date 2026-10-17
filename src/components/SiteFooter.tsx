@@ -23,6 +23,7 @@ interface SiteFooterProps {
 export const SiteFooter: React.FC<SiteFooterProps> = ({ brand, onNavigateToAuth }) => {
   const [languageOpen, setLanguageOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('English (US)');
+  const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | 'security' | 'cookies' | null>(null);
 
   const languages = [
     'English (US)',
@@ -333,16 +334,32 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ brand, onNavigateToAuth 
 
           {/* Center: Legal Links */}
           <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 font-medium">
-            <button type="button" onClick={onNavigateToAuth} className="hover:text-slate-800 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={() => setLegalModal('privacy')}
+              className="hover:text-slate-800 transition-colors cursor-pointer"
+            >
               Privacy Policy
             </button>
-            <button type="button" onClick={onNavigateToAuth} className="hover:text-slate-800 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={() => setLegalModal('terms')}
+              className="hover:text-slate-800 transition-colors cursor-pointer"
+            >
               Terms of Service
             </button>
-            <button type="button" onClick={onNavigateToAuth} className="hover:text-slate-800 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={() => setLegalModal('security')}
+              className="hover:text-slate-800 transition-colors cursor-pointer"
+            >
               Security
             </button>
-            <button type="button" onClick={onNavigateToAuth} className="hover:text-slate-800 transition-colors cursor-pointer">
+            <button
+              type="button"
+              onClick={() => setLegalModal('cookies')}
+              className="hover:text-slate-800 transition-colors cursor-pointer"
+            >
               Cookie Settings
             </button>
           </div>
@@ -391,7 +408,6 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ brand, onNavigateToAuth 
               title="Back to top"
             >
               <ArrowUp className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline text-[11px] font-medium">Top</span>
             </button>
 
           </div>
@@ -399,6 +415,91 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ brand, onNavigateToAuth 
         </div>
 
       </div>
+
+      {/* Accessible Legal Dialog Modal */}
+      {legalModal && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-xs"
+          onClick={() => setLegalModal(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+              <h3 className="text-xl font-bold text-slate-900 capitalize">
+                {legalModal === 'privacy' && 'Dayflow Privacy Policy'}
+                {legalModal === 'terms' && 'Dayflow Terms of Service'}
+                {legalModal === 'security' && 'Dayflow Security & Compliance'}
+                {legalModal === 'cookies' && 'Cookie Preferences'}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setLegalModal(null)}
+                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                aria-label="Close dialog"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="pt-4 text-sm text-slate-600 space-y-3 leading-relaxed">
+              {legalModal === 'privacy' && (
+                <>
+                  <p>
+                    Dayflow Technologies is committed to safeguarding customer data. We never sell your personal information or use private workspace data to train shared commercial foundation models.
+                  </p>
+                  <p>
+                    All customer telemetry and data in transit is encrypted using TLS 1.3, and data at rest is protected with AES-256 encryption across multi-tenant enterprise VPC boundaries.
+                  </p>
+                </>
+              )}
+              {legalModal === 'terms' && (
+                <>
+                  <p>
+                    By deploying Dayflow workspaces and connected agent workflows, your organization agrees to fair use, ethical agent execution, and standard enterprise SLA guarantees.
+                  </p>
+                  <p>
+                    Dayflow offers 99.95% uptime for business tiers and 99.99% uptime for enterprise dedicated private clusters.
+                  </p>
+                </>
+              )}
+              {legalModal === 'security' && (
+                <>
+                  <p>
+                    Dayflow maintains SOC 2 Type II, ISO 27001, HIPAA BAA compliance, and GDPR compliance with EU-based data residency options.
+                  </p>
+                  <p>
+                    SAML 2.0 Single Sign-On (Okta, Azure AD, Google Workspace), SCIM 2.0 automated provisioning, and hardware-backed MFA are supported across all enterprise tiers.
+                  </p>
+                </>
+              )}
+              {legalModal === 'cookies' && (
+                <>
+                  <p>
+                    Dayflow only uses strictly necessary session cookies for authentication, security tokens, and user preference state.
+                  </p>
+                  <p>
+                    Third-party advertising and cross-site tracking cookies are disabled by default.
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-slate-100 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setLegalModal(null)}
+                className="px-5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };

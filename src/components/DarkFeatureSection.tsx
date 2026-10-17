@@ -139,15 +139,15 @@ export const DarkFeatureSection: React.FC<DarkFeatureSectionProps> = ({ brand })
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Terminal Header Banner */}
-        <div className="mb-12">
-          <div className="inline-block bg-[#16181d] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xs">
+        <div className="mb-10">
+          <div className="inline-block bg-[#16181d] border border-white/10 rounded-2xl p-5 sm:p-7 shadow-2xl backdrop-blur-xs">
             {/* Heading line 1: Dayflow for the AI era */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mb-2">
               Dayflow for the AI era
             </h2>
             
             {/* Heading line 2: > Work smarter, together */}
-            <div className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold tracking-tight text-white flex items-center gap-2">
+            <div className="text-xl sm:text-2xl md:text-3xl font-mono font-bold tracking-tight text-white flex items-center gap-2">
               <span className="text-slate-400">&gt;</span>
               <span>Work smarter, </span>
               <span className="text-[#43D98B] drop-shadow-[0_0_12px_rgba(67,217,139,0.35)]">
@@ -158,18 +158,18 @@ export const DarkFeatureSection: React.FC<DarkFeatureSectionProps> = ({ brand })
         </div>
 
         {/* WORKS WITH Row */}
-        <div className="mb-16">
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-3.5">
+        <div className="mb-12">
+          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">
             WORKS WITH
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {integrations.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setSelectedPill(item.name)}
-                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium border transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
                   selectedPill === item.name
                     ? 'bg-[#1f242d] border-[#388BFD]/80 text-white shadow-xs'
                     : 'bg-[#16181d] border-white/10 text-slate-300 hover:bg-[#1e2128] hover:border-white/20'
@@ -183,21 +183,21 @@ export const DarkFeatureSection: React.FC<DarkFeatureSectionProps> = ({ brand })
         </div>
 
         {/* Three Columns Feature Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 pt-8 border-t border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-7 border-t border-white/10">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div 
                 key={feature.id} 
-                className="space-y-4 group p-2 rounded-xl transition-all duration-200 hover:-translate-y-1"
+                className="space-y-3 group p-2 rounded-xl transition-all duration-200 hover:-translate-y-1"
               >
-                <div className="p-1">
-                  <Icon className="w-9 h-9 text-[#388BFD] group-hover:scale-105 transition-transform duration-200" />
+                <div className="p-0.5">
+                  <Icon className="w-8 h-8 text-[#388BFD] group-hover:scale-105 transition-transform duration-200" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
                   {feature.description}
                 </p>
               </div>

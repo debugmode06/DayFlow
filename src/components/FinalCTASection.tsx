@@ -9,7 +9,7 @@ interface FinalCTASectionProps {
 
 export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ brand, onGetStarted }) => {
   return (
-    <section id="get-started" className="bg-[#0B0F19] text-white py-24 sm:py-32 text-center relative overflow-hidden border-t border-slate-800/60">
+    <section id="get-started" className="bg-[#0B0F19] text-white py-18 sm:py-24 text-center relative overflow-hidden border-t border-slate-800/60">
       {/* Ambient background glow */}
       <div 
         aria-hidden="true" 
@@ -23,13 +23,13 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ brand, onGetSt
       <div className="relative max-w-[1200px] mx-auto px-6 md:px-12 z-10">
         
         {/* Subtle pill badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-6">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-5">
           <Sparkles className="w-3.5 h-3.5 text-blue-400" />
           <span>START FREE TODAY</span>
         </div>
 
         {/* Main Headline */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] text-balance">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.14] text-balance">
           {brand.finalCtaTitle}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">
             {brand.finalCtaHighlight}
@@ -37,19 +37,19 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ brand, onGetSt
         </h2>
 
         {/* Subtitle */}
-        <p className="mt-5 text-base sm:text-lg text-slate-300 font-normal max-w-2xl mx-auto">
+        <p className="mt-4 text-sm sm:text-base text-slate-300 font-normal max-w-2xl mx-auto">
           {brand.finalCtaSubtitle}
         </p>
 
         {/* Primary Action Button */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             type="button"
             onClick={(e) => {
               e.preventDefault();
               onGetStarted?.();
             }}
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#2563FF] hover:bg-[#1d4ed8] text-white font-bold text-base transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-95 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#2563FF] hover:bg-[#1d4ed8] text-white font-bold text-[15px] transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-95 cursor-pointer"
           >
             <span>{brand.primaryCtaLabel}</span>
             <ArrowRight className="w-4 h-4" />
